@@ -9,6 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <description>微服务最佳实践</description>
+    <modules>
+        <module>SpringCloud-Nacos-Provider</module>
+        <module>SpringCloud-Nacos-Customer</module>
+    </modules>
 
     <!--SpringBoot parent 定义-->
     <parent>
@@ -27,10 +31,13 @@
         <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
         <!--Spring Cloud版本-->
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+        <!--Spring Cloud Alibaba版本-->
+        <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
     </properties>
 
 
-    <!--管理SpringBoot、SpringCloud的版本-->
+
+    <!--管理SpringBoot、SpringCloud、SpringCloud-Alibaba的版本管理-->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -47,8 +54,40 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <!--阿里云镜像-->
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
     <!--spring-boot-maven 插件-->
     <build>

@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+
+spring:
+  #应用名称
+  application:
+    name: nacos-privder-8081
+  #nacos-server 地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+    
