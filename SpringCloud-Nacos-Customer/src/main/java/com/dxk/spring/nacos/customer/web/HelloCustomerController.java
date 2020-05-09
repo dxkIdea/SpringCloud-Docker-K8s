@@ -1,6 +1,8 @@
 package com.dxk.spring.nacos.customer.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +21,8 @@ public class HelloCustomerController {
 
     @PostMapping(value = "hello")
     public String hello(@RequestParam(name = "name") String name) {
-        return restTemplate.postForObject("http://nacos-privder-8081/hello", name, String.class);
+        MultiValueMap<String, Object> parts = new LinkedMultiValueMap<String, Object>();
+        parts.add("name", name);
+        return restTemplate.postForObject("http://nacos-provider/hello", parts, String.class);
     }
 }

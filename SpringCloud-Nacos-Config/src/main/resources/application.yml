@@ -1,0 +1,13 @@
+spring:
+  application:
+    #应用名称，如果使用Nacos配置中心且没有明确配置，DataId前缀默认是spring.application.name
+    name: nacos-config
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

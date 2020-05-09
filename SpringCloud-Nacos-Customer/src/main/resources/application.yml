@@ -1,12 +1,10 @@
-server:
-  port: 8082
-
 spring:
   #应用名称
   application:
-    name: nacos-customer-8082
+    name: nacos-customer
   #nacos-server 地址
   cloud:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+        namespace: a1a9e1ab-ae9c-4039-844c-c5a6837a3f4b
