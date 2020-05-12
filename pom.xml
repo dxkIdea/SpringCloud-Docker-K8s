@@ -13,6 +13,7 @@
         <module>SpringCloud-Nacos-Provider</module>
         <module>SpringCloud-Nacos-Customer</module>
         <module>SpringCloud-Nacos-Config</module>
+        <module>SpringCloud-OpenFeign-Customer</module>
     </modules>
 
     <!--SpringBoot parent 定义-->
