@@ -14,6 +14,7 @@
         <module>SpringCloud-Nacos-Customer</module>
         <module>SpringCloud-Nacos-Config</module>
         <module>SpringCloud-OpenFeign-Customer</module>
+        <module>SpringCloud-Sentinel-Customer</module>
     </modules>
 
     <!--SpringBoot parent 定义-->

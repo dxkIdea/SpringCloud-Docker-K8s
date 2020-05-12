@@ -1,0 +1,24 @@
+server:
+  port: 18086
+
+spring:
+  application:
+    name: sentinel-customer
+  #nacos-server 地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: a1a9e1ab-ae9c-4039-844c-c5a6837a3f4b
+    sentinel:
+      #sentinel控制台的请求地址
+      transport:
+        dashboard: 127.0.0.1:8080
+      #取消控制台懒加载
+      eager: false
+
+
+#feign调用，开启对sentinel支持
+feign:
+  sentinel:
+    enabled: true
