@@ -1,0 +1,26 @@
+#应用名称
+spring:
+  application:
+    name: eureka-provider
+
+#服务端口
+server:
+  port: 19091
+
+#注册中心
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:18761/eureka/
+
+#健康信息监控
+management:
+  endpoint:
+    beans:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        exclude: all
