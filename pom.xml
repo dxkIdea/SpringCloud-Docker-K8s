@@ -17,6 +17,7 @@
         <module>SpringCloud-Sentinel-Customer</module>
         <module>SpringCloud-Netflix-Eureka-Server</module>
         <module>SpringCloud-Netflix-Eureka-Provider</module>
+        <module>SpringCloud-Netflix-Eureka-Customer</module>
     </modules>
 
     <!--SpringBoot parent 定义-->
