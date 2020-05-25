@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * @program: SpringCloud-Docker-K8s
- * @description: TODO: 消费者测试
+ * @description:  消费者测试
  * @author: 丁杏凯
  * @create: 2020-05-08 23:10
  **/

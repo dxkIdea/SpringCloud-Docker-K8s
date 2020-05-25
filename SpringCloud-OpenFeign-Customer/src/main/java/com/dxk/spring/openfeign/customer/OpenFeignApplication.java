@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @program: SpringCloud-Docker-K8s
- * @description: TODO: 声明式调用
+ * @description: 声明式调用
  * @author: 丁杏凯
  * @create: 2020-05-12 19:54
  **/

@@ -6,7 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @program: SpringCloud-Docker-K8s
- * @description: TODO: sentinel客户端
+ * @description:  sentinel客户端
  * @author: 丁杏凯
  * @create: 2020-05-12 21:14
  **/

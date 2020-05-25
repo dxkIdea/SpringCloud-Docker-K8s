@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @program: SpringCloud-Docker-K8s
- * @description: TODO: 请求重试策略配置类
+ * @description:  请求重试策略配置类
  * @author: 丁杏凯
  * @create: 2020-05-12 20:28
  **/

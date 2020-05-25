@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @program: SpringCloud-Docker-K8s
- * @description: TODO: SentinelAspectConfiguration
+ * @description:  SentinelAspectConfiguration
  * @author: 丁杏凯
  * @create: 2020-05-12 22:00
  **/

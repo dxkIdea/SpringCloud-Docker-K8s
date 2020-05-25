@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @program: SpringCloud-Docker-K8s
- * @description: TODO: HelloInterface远程调用失败回调时，故障转移
+ * @description:  HelloInterface远程调用失败回调时，故障转移
  * @author: 丁杏凯
  * @create: 2020-05-12 20:35
  **/

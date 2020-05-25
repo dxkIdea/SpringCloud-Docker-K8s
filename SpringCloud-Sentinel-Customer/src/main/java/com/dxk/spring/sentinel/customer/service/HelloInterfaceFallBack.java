@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @program: SpringCloud-Docker-K8s
- * @description: TODO: 失败回调
+ * @description:  失败回调
  * @author: 丁杏凯
  * @create: 2020-05-12 22:01
  **/

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @program: SpringCloud-Docker-K8s
- * @description: TODO: openFeign调用接口
+ * @description:  openFeign调用接口
  * @author: 丁杏凯
  * @create: 2020-05-12 19:57
  **/
