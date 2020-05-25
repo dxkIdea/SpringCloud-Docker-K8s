@@ -2,6 +2,12 @@
 spring:
   application:
     name: eureka-server
+  #eureka服务端开启登录认证
+  security:
+    user:
+      roles: SUPERUSER
+      name: admin
+      password: admin
 #端口号
 server:
   port: 18761
@@ -18,7 +24,14 @@ eureka:
     fetch-registry: false
     #服务地址
     service-url:
-      defaultZone: http://localhost:18761/eureka/
+      defaultZone: http://admin:admin@localhost:18761/eureka/
+  server:
+    #每隔60秒检测一下，是否需要踢除失联的客户端
+    eviction-interval-timer-in-ms: 60000
+    #服务端的自我保护，开启自我保护时，如果客户端丢失的比例大于0.15，就不会踢除客户端
+    enable-self-preservation: true
+    #ResponceCachImpl 开启只读缓存后，每隔30秒就更新一次只读缓存
+    response-cache-update-interval-ms: 30000
 
 #健康信息监控
 management:

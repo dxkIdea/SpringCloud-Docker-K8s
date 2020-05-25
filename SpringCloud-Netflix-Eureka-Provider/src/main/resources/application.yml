@@ -13,12 +13,16 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:18761/eureka/
+      defaultZone: http://admin:admin@localhost:18761/eureka/
 
 #健康信息监控
 management:
   endpoint:
     beans:
+      enabled: true
+    health:
+      enabled: true
+    info:
       enabled: true
   endpoints:
     web:
