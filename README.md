@@ -1,6 +1,7 @@
 # SpringCloud-Docker-K8s
 >2020微服务最佳实践，持续集成中
 
+![SpringCloud官方微服务图示](images\microservice.jpg)
 ##注册中心.Nacos
 >使用Nacos作为注册中心
 
