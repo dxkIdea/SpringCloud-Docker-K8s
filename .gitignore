@@ -23,3 +23,4 @@
 /SpringCloud-Netflix-Eureka-Customer/target/classes/com/dxk/springcloud/netflix/eureka/customer/service/HelloServiceImpl.class
 /SpringCloud-Nacos-Provider/target/classes/com/dxk/spring/nacos/provider/NacosProviderApplication.class
 /SpringCloud-Netflix-Eureka-Customer/target/classes/com/dxk/springcloud/netflix/eureka/customer/config/RestTemplateConfig.class
+/.idea/workspace.xml

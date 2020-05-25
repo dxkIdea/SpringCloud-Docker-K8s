@@ -24,8 +24,3 @@ management:
     web:
       exposure:
         exclude: all
-
-#声明式调用开启hystrix熔断功能
-feign:
-  hystrix:
-    enabled: true
