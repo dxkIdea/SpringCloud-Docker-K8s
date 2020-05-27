@@ -28,6 +28,17 @@ spring:
         service-id: config-server
         enabled: true
       fail-fast: false
+    #开启消息跟踪
+    bus:
+      ack:
+        enabled: true
+  #rabbitmq连接信息
+  rabbitmq:
+    host: 192.168.0.105
+    port: 15672
+    username: guest
+    password: guest
+
 
 #注册中心
 eureka:

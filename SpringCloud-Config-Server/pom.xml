@@ -37,6 +37,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-actuator</artifactId>
         </dependency>
+
+        <!--SpringCloud-bus消息总线-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
     </dependencies>
 
 
