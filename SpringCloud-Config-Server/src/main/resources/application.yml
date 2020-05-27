@@ -1,0 +1,26 @@
+server:
+  port: 18888
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      #分支
+      label: master
+      #服务端地址及用户信息
+      server:
+        git:
+          #远程仓库地址
+          uri: https://github.com/dxkIdea/config-server.git
+          #用户名
+          username: dxkIdea
+          #密码
+          password: dingxk58.
+
+#注册中心
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://admin:admin@localhost:18761/eureka/

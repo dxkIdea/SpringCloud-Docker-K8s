@@ -1,0 +1,54 @@
+#spring cloud config 默认的请求地址和资源文件映射:
+
+#/{application}/{profile}[/{label}]
+#/{application}-{profile}.yml
+#/{label}/{application}-{profile}.yml
+#/{application}-{profile}.properties
+#/{label}/{application}-{profile}.properties
+
+#服务端口
+server:
+  port: 19091
+
+#应用名称
+spring:
+  application:
+    name: eureka-provider
+
+  cloud:
+    config:
+      #配置中心地址
+      uri: http://127.0.0.1:18888
+      #环境后缀
+      #profile: dev
+      #仓库分支
+      label: master
+      #注册中心的服务ID
+      discovery:
+        service-id: config-server
+        enabled: true
+      fail-fast: false
+
+#注册中心
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://admin:admin@localhost:18761/eureka/
+
+#健康信息监控
+management:
+  endpoint:
+    beans:
+      enabled: true
+    health:
+      enabled: true
+    info:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        exclude: all
+
+

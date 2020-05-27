@@ -30,6 +30,7 @@ zuul:
   prefix: /api
   strip-prefix: true
   routes:
+    #面向服务路由
     provider:
       path: /provider/**
       serviceId: eureka-provider

@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>SpringCloud-Netflix-Eureka-Provider</artifactId>
+    <artifactId>SpringCloud-Config-Server</artifactId>
     <packaging>jar</packaging>
-    <description>Eureka为注册中心，服务提供者</description>
+    <description>SpringCloud 配置中心</description>
 
     <dependencies>
         <!--SpringBoot-web依赖-->
@@ -26,16 +26,16 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
+        <!--SpringCloud-Config配置中心-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+
         <!--SpringBoot-actuator依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-actuator</artifactId>
-        </dependency>
-
-        <!--SpringCloud-config客户端依赖-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
     </dependencies>
 
