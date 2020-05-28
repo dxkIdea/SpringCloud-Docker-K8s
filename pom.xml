@@ -20,6 +20,7 @@
         <module>SpringCloud-Netflix-Eureka-Customer</module>
         <module>SpringCloud-Netflix-Zuul-Server</module>
         <module>SpringCloud-Config-Server</module>
+        <module>SpringBoot-Admin-Server</module>
     </modules>
 
     <!--SpringBoot parent 定义-->

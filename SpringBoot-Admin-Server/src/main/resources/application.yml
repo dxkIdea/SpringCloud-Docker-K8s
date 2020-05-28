@@ -1,0 +1,33 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: admin-server
+  security:
+    user:
+      name: admin
+      password: 123456
+  boot:
+    admin:
+      monitor:
+        info-interval: 10000
+        status-interval: 10000
+      notify:
+        mail:
+          enabled: true
+          from: 17600299358@163.com
+          to: 979352276@qq.com
+
+  mail:
+    protocol: smtp.163.com
+    username: 17600299358@163.com
+    password: dingxk58.
+
+#注册中心
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://admin:admin@localhost:18761/eureka
