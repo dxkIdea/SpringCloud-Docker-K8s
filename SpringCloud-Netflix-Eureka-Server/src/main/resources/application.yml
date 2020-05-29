@@ -2,6 +2,13 @@
 spring:
   application:
     name: eureka-server
+  boot:
+    admin:
+      client:
+        enabled: true
+        url: http://127.0.0.1:9999
+        instance:
+          service-base-url: http://127.0.0.1:${server.port}
   #eureka服务端开启登录认证
   security:
     user:
@@ -38,7 +45,9 @@ management:
   endpoint:
     beans:
       enabled: true
+    health:
+      show-details: always
   endpoints:
     web:
       exposure:
-        exclude: all
+        include: "*"

@@ -40,10 +40,10 @@
         </dependency>
 
         <!--掉线发送邮件通知-->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
 

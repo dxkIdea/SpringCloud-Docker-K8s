@@ -42,6 +42,7 @@
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
         <!--Spring Cloud Alibaba版本-->
         <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
+        <spring-boot-admin.version>2.2.3</spring-boot-admin.version>
     </properties>
 
 
@@ -49,6 +50,7 @@
     <!--管理SpringBoot、SpringCloud、SpringCloud-Alibaba的版本管理-->
     <dependencyManagement>
         <dependencies>
+            <!--SpringCloud依赖版本-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -56,6 +58,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--SpringBoot-starter依赖版本-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-parent</artifactId>
@@ -63,12 +66,19 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--SpringCloud-Alibaba依赖版本-->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
                 <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <!--SpringBoot-Admin服务监控依赖版本-->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

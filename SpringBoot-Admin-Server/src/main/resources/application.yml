@@ -10,19 +10,23 @@ spring:
       password: 123456
   boot:
     admin:
-      monitor:
-        info-interval: 10000
-        status-interval: 10000
-      notify:
-        mail:
-          enabled: true
-          from: 17600299358@163.com
-          to: 979352276@qq.com
-
-  mail:
-    protocol: smtp.163.com
-    username: 17600299358@163.com
-    password: dingxk58.
+      ui:
+        title: SpringBoot Admin-Server
+#  boot:
+#    admin:
+#      monitor:
+#        info-interval: 10000
+#        status-interval: 10000
+#      notify:
+#        mail:
+#          enabled: true
+#          from: 17600299358@163.com
+#          to: 979352276@qq.com
+#
+#  mail:
+#    protocol: smtp.163.com
+#    username: 17600299358@163.com
+#    password: dingxk58.
 
 #注册中心
 eureka:
@@ -31,3 +35,8 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://admin:admin@localhost:18761/eureka
+  instance:
+    metadata-map:
+      user:
+        name: "admin"
+        password: "admin"

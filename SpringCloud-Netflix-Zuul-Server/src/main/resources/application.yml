@@ -2,6 +2,13 @@
 spring:
   application:
     name: zuul-server
+  boot:
+    admin:
+      client:
+        enabled: true
+        url: http://127.0.0.1:9999
+        instance:
+          service-base-url: http://127.0.0.1:${server.port}
 
 #服务端口
 server:
@@ -20,10 +27,12 @@ management:
   endpoint:
     beans:
       enabled: true
+    health:
+      show-details: always
   endpoints:
     web:
       exposure:
-        exclude: all
+        include: "*"
 
 #zuul实现服务路由
 zuul:
