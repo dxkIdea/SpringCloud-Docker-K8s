@@ -29,7 +29,7 @@ spring:
         enabled: true
       fail-fast: false
     #开启消息跟踪
-    bus:
+    bus:firewall-cmd --zone=public --add-port=15672/tcp --permanent
       ack:
         enabled: true
   #rabbitmq连接信息

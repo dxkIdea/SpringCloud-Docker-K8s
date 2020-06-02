@@ -1,7 +1,8 @@
-#应用名称
 spring:
+  #应用名称
   application:
     name: eureka-server
+  #服务监控
   boot:
     admin:
       client:

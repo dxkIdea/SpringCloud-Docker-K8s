@@ -18,10 +18,11 @@ spring:
           password: dingxk58.
   #rabbitmq连接信息
   rabbitmq:
+    virtual-host: dev_host
     host: 192.168.0.105
     port: 15672
-    username: guest
-    password: guest
+    username: "admin"
+    password: "dxk123456"
 
 #注册中心
 eureka:
