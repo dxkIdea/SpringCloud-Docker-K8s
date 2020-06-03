@@ -1,5 +1,8 @@
 spring:
-  #应用名称
+  profiles:
+    #dev-开发、test-测试、prod-生产
+    active: prod
+    #应用名称
   application:
     name: nacos-provider
   #nacos-server 地址

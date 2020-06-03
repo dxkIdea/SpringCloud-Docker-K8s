@@ -16,3 +16,5 @@ spring:
         namespace: a1a9e1ab-ae9c-4039-844c-c5a6837a3f4b
         #是否开启监听和自动刷新,默认true
         refresh-enabled: true
+        username: nacos
+        password: nacos
