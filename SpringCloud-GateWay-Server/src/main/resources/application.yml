@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: gateway-server
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: 127.0.0.1:8848
+        namespace: a1a9e1ab-ae9c-4039-844c-c5a6837a3f4b
+
+    gateway:
+      discovery:
+        #从注册中心发现服务
+        locator:
+          enabled: true
+#监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+
+
