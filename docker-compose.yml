@@ -1,0 +1,47 @@
+
+version: '2'
+services:
+  zookeeper:
+    image: "wurstmeister/zookeeper"
+    hostname: "zookeeper.local"
+    container_name: "zookeeper"
+    restart: always
+    ports:
+       - "2181:2181"
+    #设置网络别名
+    networks:
+      local:
+        aliases:
+          - "zookeeper.local"
+  kafka:
+    image: "wurstmeister/kafka"
+    hostname: "kafka.local"
+    container_name: "kafka"
+    restart: always
+    ports:
+      - "9092:9092"
+    networks:
+      local:
+        aliases:
+          - "kafka.local"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 11.205.54.76 
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      
+  redis:
+    image: redis
+    hostname: "redis.local"
+    container_name: "redis"
+    restart: always
+    ports:
+      - "6379:6379"
+    #设置网络别名
+    networks:
+      local:
+        aliases:
+          - "redis.local"
+      
+#设置网络，名为local
+networks:
+  local:
+    driver: bridge
