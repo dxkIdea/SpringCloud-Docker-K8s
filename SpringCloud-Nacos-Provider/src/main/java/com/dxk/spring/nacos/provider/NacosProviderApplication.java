@@ -3,6 +3,7 @@ package com.dxk.spring.nacos.provider;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * @program: SpringCloud-Docker-K8s
@@ -10,6 +11,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @author: 丁杏凯
  * @create: 2020-05-08 22:39
  **/
+@EnableScheduling
 @SpringBootApplication
 @EnableDiscoveryClient
 public class NacosProviderApplication {
