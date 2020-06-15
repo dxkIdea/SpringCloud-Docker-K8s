@@ -15,28 +15,28 @@ services:
           - "zookeeper.local"
   kafka:
     image: "wurstmeister/kafka"
-    hostname: "kafka.local"
+#    hostname: "kafka.local"
     container_name: "kafka"
     restart: always
     ports:
       - "9092:9092"
-    networks:
-      local:
-        aliases:
-          - "kafka.local"
+#    networks:
+#      local:
+#        aliases:
+#          - "kafka.local"
     environment:
       KAFKA_ADVERTISED_HOST_NAME: 192.168.0.105
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-    volumes:
-      - ./kafka-logs:/kafka
-      - /var/run/docker.sock:/var/run/docker.sock
+#    volumes:
+#      - ./kafka-logs:/kafka
+#      - /var/run/docker.sock:/var/run/docker.sock
 
-#  kafka-manager:
-#    image: sheepkiller/kafka-manager
-#    ports:
-#      - 9020:9000
-#    environment:
-#      ZK_HOSTS: zookeeper:2181
+  kafka-manager:
+    image: sheepkiller/kafka-manager
+    ports:
+      - 9020:9000
+    environment:
+      ZK_HOSTS: zookeeper:2181
       
   redis:
     image: redis
@@ -77,7 +77,51 @@ services:
       MODE: standalone
 
 
-  el
+  elasticsearch:
+    image: elasticsearch:6.4.1
+    container_name: elasticsearch
+    environment:
+      #集群名称为elasticsearch
+      - "cluster.name=elasticsearch"
+      #单节点启动
+      - "discovery.type=single-node"
+      #jvm内存分配为512MB
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      #插件文件挂载
+      - /opt/elasticsearch/plugins:/usr/share/elasticsearch/plugins
+      #数据文件挂载
+      - /opt/elasticsearch/data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+
+  kibana:
+    image: kibana:6.4.1
+    container_name: kibana
+    links:
+      #配置elasticsearch域名为es
+      - elasticsearch:es
+    #kibana在elasticsearch启动之后再启动
+    depends_on:
+      - elasticsearch
+    #因为上面配置了域名，所以这里可以简写为http://es:9200
+    environment:
+      - "elasticsearch.hosts=http://es:9200"
+    ports:
+      - 5601:5601
+
+  logstash:
+    image: logstash:6.4.1
+    container_name: logstash
+    #挂载logstash的配置文件
+    volumes:
+      - /opt/elasticsearch/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    depends_on:
+      - elasticsearch
+    links:
+      - elasticsearch:es
+    ports:
+      - 4560:4560
       
 #设置网络，名为local
 networks:
