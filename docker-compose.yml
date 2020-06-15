@@ -25,8 +25,18 @@ services:
         aliases:
           - "kafka.local"
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: 11.205.54.76 
+      KAFKA_ADVERTISED_HOST_NAME: 192.168.0.105
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    volumes:
+      - ./kafka-logs:/kafka
+      - /var/run/docker.sock:/var/run/docker.sock
+
+#  kafka-manager:
+#    image: sheepkiller/kafka-manager
+#    ports:
+#      - 9020:9000
+#    environment:
+#      ZK_HOSTS: zookeeper:2181
       
   redis:
     image: redis
@@ -40,6 +50,34 @@ services:
       local:
         aliases:
           - "redis.local"
+
+  #  mysql:
+  #    image: mysql
+  #    hostname: "mysql.local"
+  #    container_name: "mysql"
+  #    restart: always
+  #    ports:
+  #      - "3306:3306"
+  #   #设置网络别名
+  #    networks:
+  #      local:
+  #        aliases:
+  #          - "mysql.local"
+  #    environment:
+  #      #密码
+  #      MYSQL_ROOT_PASSWORD: "123456"
+
+  nacos:
+    image: nacos/nacos-server
+    restart: always
+    container_name: nacos
+    ports:
+      - 8848:8848
+    environment:
+      MODE: standalone
+
+
+  el
       
 #设置网络，名为local
 networks:

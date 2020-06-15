@@ -5,5 +5,5 @@ spring:
         refresh-enabled: true
         name: openfeign-customer
         namespace: a1a9e1ab-ae9c-4039-844c-c5a6837a3f4b
-        server-addr: 127.0.0.1:8848
+        server-addr: 192.168.0.105:8848
         file-extension: yaml
