@@ -22,6 +22,7 @@
         <module>SpringCloud-Config-Server</module>
         <module>SpringBoot-Admin-Server</module>
         <module>SpringCloud-GateWay-Server</module>
+        <module>SpringBoot-Testing</module>
     </modules>
 
     <!--SpringBoot parent 定义-->
