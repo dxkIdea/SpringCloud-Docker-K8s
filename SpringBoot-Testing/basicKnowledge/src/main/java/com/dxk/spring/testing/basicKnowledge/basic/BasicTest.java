@@ -1,4 +1,4 @@
-package com.dxk.springboot.testing.basic;
+package com.dxk.spring.testing.basicKnowledge.basic;
 
 /**
  * Created with IDEA.2020
