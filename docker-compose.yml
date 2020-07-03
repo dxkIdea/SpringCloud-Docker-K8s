@@ -76,6 +76,35 @@ services:
     environment:
       MODE: standalone
 
+  rabbitmq:
+    image: rabbitmq:management-alpine
+    container_name: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=dxk
+      - RABBITMQ_DEFAULT_PASS=123456
+    restart: always
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+
+  mongoDB:
+    image: mongo
+    restart: always
+    container_name: mongoDB
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: dxk
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    ports:
+      - 27017:27017
+    # 数据持久化
+    volumes:
+      - D:\IT workspace\Docker Desktop\volume\mongoDB\data:/data/db
+
 
   elasticsearch:
     image: elasticsearch:6.4.1

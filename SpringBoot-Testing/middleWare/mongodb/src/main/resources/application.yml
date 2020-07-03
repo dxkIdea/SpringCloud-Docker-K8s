@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://dxk:123456@127.0.0.1:27017
+      database: testDB
